@@ -49,9 +49,11 @@ for pdf in pdfs:
     loader = PyPDFLoader(pdf)
     pdf_documents.append(loader.load())
     
-# documents += pdf_documents
+documents += pdf_documents[0]
 
-print(documents)
+# print(documents)
+
+# print(pdf_documents)
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 all_splits = text_splitter.split_documents(documents)
